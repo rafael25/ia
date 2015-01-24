@@ -16,8 +16,9 @@ verificarAlim(Nombre):- alimento(Nombre, X, Y, Z), nl, write(X), tab(3), write(Y
 
 verificarAlim(Nombre):- \+alimento(Nombre, _, _, _), write('Error no existe').
 
-descuento(bronze, 15).
-descuento(plata, 20).
-descuento(oro, 30).
+tipoD:- limpiar, write('Tipo descuento: '), read(Tipo), verificaD(Tipo).
 
-tipoD:- limpiar, write('Tipo descuento: '), read(Tipo), descuento(Tipo, X), write('Tu descuento es de: '),write(X), write('%').
+verificaD(bronze):- write('Tu descuento es 15%').
+verificaD(plata):- write('Tu descuento es 20%').
+verificaD(oro):- write('Tu descuento es 30%').
+verificaD(_):- write('Error no existe').
